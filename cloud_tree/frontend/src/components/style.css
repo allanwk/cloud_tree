@@ -1,0 +1,141 @@
+/* Video Explanation: https://youtu.be/kd4iFA6PzBk */  
+.context-sub-menu,
+.context-menu {
+position: fixed;
+background: #fff;
+z-index: 9999999;
+width: 120px;
+margin: 0;
+padding: 5px 0;
+border-radius: 2px;
+box-shadow: 0 0 6px rgba(0,0,0,0.2);
+font-size: 12px;
+}
+
+.context-menu .context-menu-item {
+height: 30px;
+display: flex;
+align-items: center;
+padding: 6px 10px;
+cursor: pointer;
+position: relative;
+border-bottom: 1px solid #f2f2f2;
+}
+
+.context-menu .context-menu-item span {
+display: block;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.context-menu-item:last-of-type {
+border-bottom: none;
+}
+
+.context-menu .context-menu-item:hover {
+background: #f2f2f2;
+}
+
+.context-menu .context-sub-menu {
+position: absolute;
+top: 0;
+left: 100%;
+display: none;
+width: 100px;
+}
+
+.context-menu .context-menu-item:hover > .context-sub-menu {
+display: block;
+}
+
+.context-menu.left .context-sub-menu {
+left: 0;
+transform: translateX(-100%);
+}
+
+.context-menu.top .context-sub-menu {
+top: 100%;
+transform: translateY(-100%);
+}
+
+.context-menu.left.top .context-sub-menu {
+transform: translate(-100%, -100%);
+}
+
+.person{
+    font-family: 'Lato', sans-serif;
+    border-radius: 5px;
+    border: 2px solid #D6E3F8;
+    color: #66635B;
+    position: absolute;
+    background-color: #D6E3F8;
+    text-align: center;
+    box-shadow: 2px 2px 5px 5px #5B5952;
+}
+
+body{
+    background-color: #66635B;
+}
+
+#main, #app, .App, .tree-div, html, body{
+    margin:0;
+    width:100%;
+    height:100%;
+}
+
+.login{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #D6E3F8;
+    border-radius: 5px;
+    padding:5px;
+}
+
+.btn{
+    background-color: #66635B;
+    color: #D6E3F8;
+    margin: 0 auto;
+}
+
+.btn:hover{
+    background-color: #1f1e1c;
+}
+
+.btn:focus{
+    background-color: #1f1e1c;
+}
+
+input:focus:not([readonly]){
+    border-bottom: none;
+}
+
+input:focus {
+    border-bottom: 1px solid #000 !important;
+    box-shadow: 0 1px 0 0 #000;
+}
+
+label{
+    color: #66635B;
+}
+
+.container{
+    padding: 10px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label{
+    align-self: flex-start;
+}
+
+.error{
+    background-color: rgba(242, 85, 85, 0.5);
+    border-radius: 5px;
+}
