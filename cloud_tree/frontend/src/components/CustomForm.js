@@ -53,6 +53,7 @@ function CustomForm(props) {
                     <input onChange={(e) => setConfirmPassword(e.target.value)} type="password"></input>
                 </>
                 ) : null}
+                <br/>
                 {<button type="submit" className='btn'>{props.type == 'login' ? "Logar" : "Registrar"}</button>}
             </form>
             {props.type == 'register' ? 

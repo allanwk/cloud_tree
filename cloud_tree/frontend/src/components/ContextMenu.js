@@ -45,6 +45,21 @@ export const attachContextMenu = (() => {
       let x = 0;
       let y = 0;
       
+      if(e.clientX >= (innerWidth / 2)) {
+        contextMenu.classList.add('left');
+      }
+      
+      if(e.clientY >= (innerHeight / 2)) {
+        contextMenu.classList.add('top');
+      }
+  
+      if(e.clientX >= (innerWidth - offsetWidth)) {
+        x = '-100%';
+      }
+  
+      if(e.clientY >= (innerHeight - offsetHeight)) {
+        y = '-100%';
+      }
   
       contextMenu.style.left = e.clientX + 'px';
       contextMenu.style.top = e.clientY + 'px';

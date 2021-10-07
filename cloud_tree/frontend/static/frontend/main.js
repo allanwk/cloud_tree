@@ -318,6 +318,23 @@ var attachContextMenu = function () {
         offsetHeight = contextMenu.offsetHeight;
     var x = 0;
     var y = 0;
+
+    if (e.clientX >= innerWidth / 2) {
+      contextMenu.classList.add('left');
+    }
+
+    if (e.clientY >= innerHeight / 2) {
+      contextMenu.classList.add('top');
+    }
+
+    if (e.clientX >= innerWidth - offsetWidth) {
+      x = '-100%';
+    }
+
+    if (e.clientY >= innerHeight - offsetHeight) {
+      y = '-100%';
+    }
+
     contextMenu.style.left = e.clientX + 'px';
     contextMenu.style.top = e.clientY + 'px';
     contextMenu.style.transform = "translate(".concat(x, ", ").concat(y, ")");
@@ -430,7 +447,7 @@ function CustomForm(props) {
       return setConfirmPassword(e.target.value);
     },
     type: "password"
-  })) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+  })) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     type: "submit",
     className: "btn"
   }, props.type == 'login' ? "Logar" : "Registrar")), props.type == 'register' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "J\xE1 tem uma conta? ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
@@ -927,6 +944,10 @@ var Tree = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      if (this.props.username == '') {
+        location.href = '/login';
+      }
+
       var w = this.person_width.toString() + 'px';
       var p = Object.values(this.people);
       var people = p.map(function (person) {

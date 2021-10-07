@@ -339,6 +339,10 @@ class Tree extends Component{
     }
 
     render(){
+        if(this.props.username == ''){
+            location.href = '/login'
+        }
+
         var w = (this.person_width).toString() + 'px'
         var p = Object.values(this.people);
         var people = p.map(function(person){
